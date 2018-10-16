@@ -1,5 +1,5 @@
 {
-  "name": "Trips",
+  "name": "root_trip",
   "version": "1.0.0",
   "description": "",
   "author": "Jameson Daosavanh",
@@ -7,6 +7,9 @@
   "devDependencies": {
     "chai": "^4.2.0",
     "mocha": "^5.2.0"
+  },
+  "scripts": {
+    "test": "mocha || true"
   },
   "dependencies": {
   }

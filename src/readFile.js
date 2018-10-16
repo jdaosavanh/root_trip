@@ -17,13 +17,11 @@ readFilePromise = (file) => {
             console: false
         }); // provide correct file path
 
-        rl.on('line', function (line, lineCount, byteCount) {
-            // console.log(lineCount, line, byteCount);
+        rl.on('line', function (line) {
             inputs.push(line);
         })
             .on('close', function() {
-                var json = JSON.stringify(inputs);
-                resolve(inputs); // resolve(json); may be??
+                resolve(inputs);
             })
             .on('error', function (e) {
                 console.log("error", e);
@@ -34,7 +32,7 @@ readFilePromise = (file) => {
 };
 
 /*
- * Takes in an array of each line put and parses into driver and their trips
+ * Takes in an array of each line and parses into driver and their trips
  */
 
 parseData = (lines) => {
@@ -80,8 +78,8 @@ parseData = (lines) => {
                 console.log(`line ${pos} doesn't have enough inputs`);
             }
 
-        }
-        else{
+        }else
+        {
             console.log(input[0]+" is not a command");
         }
 
@@ -89,6 +87,10 @@ parseData = (lines) => {
 
     return drivers;
 };
+
+/*
+ * Returns a promise of the parsed data.
+ */
 
 getParseData = (file) => {
 

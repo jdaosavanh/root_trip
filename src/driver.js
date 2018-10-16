@@ -22,9 +22,8 @@ class Driver {
     /*
      * Takes in time in minutes and distance in miles and returns miles/hour
      */
-    static getRate(time,distance){
-
-        return Math.round((distance/(time/60)))
+    static getRateMPH(time, distance){
+        return Math.round((parseFloat(distance)/(parseFloat(time)/60)))
     }
 
     /*
@@ -44,15 +43,20 @@ class Driver {
         return time
     }
 
+    /*
+     * Takes in start time, end time and distance (miles) and calculates miles per hour
+     * Will return null if time is over 24 hours or negative
+     */
      static calculateRate(time_start,time_stop,distance){
 
         let time = Driver.calculateTimeDif(time_start,time_stop);
 
-        if(time === null)
+        //shouldn't been more than 24 hours
+        if(time === null || time > (24*60))
         {
             return null
         }
-        return Driver.getRate(time,distance)
+        return Driver.getRateMPH(time,distance)
 
     }
 
@@ -71,7 +75,7 @@ class Driver {
         });
     }
 
-    // Returns the total taken
+    // Calculate and set the average speed and total distance
     calculateTrips(){
 
         this.filterTrips();
@@ -83,8 +87,8 @@ class Driver {
             sum_time += Driver.calculateTimeDif(trip.time_start,trip.time_stop);
         });
 
-        if(sum_distance > 0 && sum_time > 0) {
-            this.average_speed = Driver.getRate(sum_time, sum_distance);
+        if(sum_distance > 0 ) {
+            this.average_speed = Driver.getRateMPH(sum_time, sum_distance);
             this.total_distance = Math.round(sum_distance);
         }
     }
