@@ -19,5 +19,8 @@ attribute values.
 10)Run calculations to get average speed
 11) Sort by miles driven
 
+For testing I use mocha and chai to create a few unit test.
+The latest version of node and npm should be install. The command "npm i" can be used to install mocha and chai.
+"npm run test" to the the test scripts.
 
-
+The code can be ran by running the app.js file with an argument of the text. EG if in root file "node src/app.js src/file/input1.txt"
