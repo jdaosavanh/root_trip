@@ -18,7 +18,6 @@ class Driver {
         this.trips.push(trip)
     }
 
-
     /*
      * Takes in time in minutes and distance in miles and returns miles/hour
      */
@@ -63,16 +62,14 @@ class Driver {
     //Filter out the unnecessary trips
     filterTrips(){
 
-        this.trips.forEach((trip,pos) =>{
-
-            let rate = Driver.calculateRate(trip.time_start,trip.time_stop,trip.distance_traveled);
-
+        for(let i = 0; i < this.trips.length; i++){
+            let rate = Driver.calculateRate(this.trips[i].time_start,this.trips[i].time_stop,this.trips[i].distance_traveled);
             if(rate < 5 || rate > 100 || rate === null){
-                //Remove from position
-                this.trips.splice(pos,1)
-            }
+                //Remove from position and offset index
+                this.trips.splice(i--,1);
 
-        });
+            }
+        }
     }
 
     // Calculate and set the average speed and total distance

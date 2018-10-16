@@ -20,13 +20,13 @@ readFilePromise = (file) => {
         rl.on('line', function (line) {
             inputs.push(line);
         })
-            .on('close', function() {
-                resolve(inputs);
-            })
-            .on('error', function (e) {
-                console.log("error", e);
-                reject(Error(e));
-            });
+        .on('close', function() {
+            resolve(inputs);
+        })
+        .on('error', function (e) {
+            console.log("error", e);
+            reject(Error(e));
+        });
     });
 
 };
