@@ -39,25 +39,25 @@ Bob: 0 miles
 
 After I have an idea of how I want the data to be modeled.
 
-1)Handle the command line input of the file.
+1) Handle the command line input of the file.
 
-2)Parse the file line by line
+2) Parse the file line by line
 
-3)Parse the command. (handle if the command is not in the file)
+3) Parse the command. (handle if the command is not in the file)
 
 4) If driver doesn't exist create a driver. (if driver exist report existing line number)
 
 5) If trip command (check if driver exist if driver doesn't exist report it) then set the attribute values.
 
-6)Once all the data has been parse. Now its time for computing
+6) Once all the data has been parse. Now its time for computing
 
-7)Parse time difference
+7) Parse time difference
 
 8) Run calculations for each user to check if trip should be tossed
 
 9) Run calculations to get totals miles
 
-10)Run calculations to get average speed
+10) Run calculations to get average speed
 
 11) Sort by miles driven
 
