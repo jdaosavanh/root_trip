@@ -37,6 +37,14 @@ Dan: 39 miles @ 47 mph
 Bob: 0 miles
 ```
 
+##My process
+
+Before any coding is written. I first look at how the data should be structured. Knowing that there are two commands
+Driver and Trip. Driver will register a new Driver in the application. Trip will record a trip attributed to a driver.
+Looking at this i should make a Driver class that has a constructor of name and a Trip class that has the record of a trip. If this
+was modeled using a data base. Driver would have the schema of ID and Name. Trip would have the schema of ID, Driver ID, Start time,
+End time, miles driven.
+
 After I have an idea of how I want the data to be modeled.
 
 1) Handle the command line input of the file.
