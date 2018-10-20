@@ -37,7 +37,7 @@ Dan: 39 miles @ 47 mph
 Bob: 0 miles
 ```
 
-##My process
+## My process
 
 Before any coding is written. I first look at how the data should be structured. Knowing that there are two commands
 Driver and Trip. Driver will register a new Driver in the application. Trip will record a trip attributed to a driver.
